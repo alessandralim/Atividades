@@ -1,0 +1,26 @@
+name: Meu Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    name: Primeiro Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Passo 1
+        run: echo "Executando o passo 1"
+      - name: Passo 2
+        run: echo "Executando o passo 2"
+  
+  job2:
+    name: Segundo Job
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Passo 1
+        run: echo "Executando o passo 1 do segundo job"
+      - name: Passo 2
+        run: echo "Executando o passo 2 do segundo job"
